@@ -1,17 +1,98 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
-
 var app = express();
+var articles =
+{
+    articl-eone: {
+        title: 'Article one | Arun',
+        heading: 'Article one',
+        date: 'Sep 5 2017',
+        contant: `<p>
+                This the the content This the the content This the the content This the the content This the the content This the the content 
+            </p>
+            <p>
+                This the the content This the the content This the the content This the the content This the the content This the the content 
+            </p>
+            <p>
+                This the the content This the the content This the the content This the the content This the the content This the the content 
+            </p>
+            <p>
+                This the the content This the the content This the the content This the the content This the the content This the the content 
+            </p>
+            <p>
+                This the the content This the the content This the the content This the the content This the the content This the the content 
+            </p>
+            <p>
+                This the the content This the the content This the the content This the the content This the the content This the the content 
+            </p>`
+    },
+    article-two: {
+        title: 'Article Two | Arun',
+        heading: 'Article two',
+        date: 'Sep 23 2017',
+        contant: `<p>
+                This the the content This the the content This the the content This the the content This the the content This the the content 
+            </p>
+            
+                This the the content This the the content This the the content This the the content This the the content This the the content 
+            </p>
+            <p>
+                This the the content This the the content This the the content This the the content This the the content This the the content 
+            </p>`
+    },
+    article-three: { 
+        title: 'Article Tree | Arun',
+        heading: 'Article three',
+        date: 'Sep 23 2017',
+        contant: `<p>
+                This the the content This the the content This the the content This the the content This the the content This the the content 
+            </p>
+            
+                This the the content This the the content This the the content This the the content This the the content This the the content 
+            </p>`
+    }
+    
+};
+function createHtml (data){
+    var title=data.title;
+    var heading=data.heading;
+    var date=data.date;
+    var content=data.content;
+    var htmltemplate = `
+        <html>
+            <head>
+                <title>
+                   ${title}
+                </title>
+                <meta name="viewport" width="with-device-width,inital-scale-one"/> 
+            </head>
+            
+            <body>
+                <div>
+                    <a href="/">home</a>
+                </div>
+                <hr/>
+                <div>
+                    <h1>${heading}</h1>
+                </div>
+                <div>
+                    <h4>${date}</h4>
+                </div>
+                <div>
+                    ${content}
+                </div>
+            </body>
+        </html> `
+}
 app.use(morgan('combined'));
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function(req,res){
-  // res.send("article one"); 
-   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+app.get('/:articlename', function(req,res){
+  res.send(createHtml(articles(articlename)));
 });
 
 app.get('/article-two', function(req,res){
