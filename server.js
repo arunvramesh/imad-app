@@ -82,7 +82,7 @@ function createHtml (data){
                         <h4>${date}</h4>
                     </div>
                     <div>
-                        ${content}
+                        ${contant}
                     </div>
                 <div>
             </body>
