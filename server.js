@@ -58,7 +58,7 @@ function createHtml (data){
     var title=data.title;
     var heading=data.heading;
     var date=data.date;
-    var content=data.content;
+    var content=data.contant;
     var htmltemplate = `
         <html>
             <head>
