@@ -4,7 +4,7 @@ var path = require('path');
 var app = express();
 var articles =
 {
-    articl-eone: {
+    'article-one' : {
         title: 'Article one | Arun',
         heading: 'Article one',
         date: 'Sep 5 2017',
@@ -27,7 +27,7 @@ var articles =
                 This the the content This the the content This the the content This the the content This the the content This the the content 
             </p>`
     },
-    article-two: {
+    'article-two': {
         title: 'Article Two | Arun',
         heading: 'Article two',
         date: 'Sep 23 2017',
@@ -41,7 +41,7 @@ var articles =
                 This the the content This the the content This the the content This the the content This the the content This the the content 
             </p>`
     },
-    article-three: { 
+    'article-three': { 
         title: 'Article Tree | Arun',
         heading: 'Article three',
         date: 'Sep 23 2017',
@@ -92,7 +92,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/:articlename', function(req,res){
-  res.send(createHtml(articles(articlename)));
+  res.send(createHtml(articles[articlename]));
 });
 
 app.get('/article-two', function(req,res){
