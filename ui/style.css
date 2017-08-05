@@ -4,6 +4,15 @@ body {
     margin-top: 75px;
 }
 
+.container {
+     text-align: center;
+      font-family: sans-serif;
+      max-width: 800px;
+      color: grey;
+      margin: 0 auto;
+      
+}
+
 .center {
     text-align: center;
 }
