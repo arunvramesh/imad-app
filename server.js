@@ -70,19 +70,21 @@ function createHtml (data){
             </head>
             
             <body>
+                <div class="contaiiner">
+                    <div>
+                        <a href="/">home</a>
+                    </div>
+                    <hr/>
+                    <div>
+                        <h1>${heading}</h1>
+                    </div>
+                    <div>
+                        <h4>${date}</h4>
+                    </div>
+                    <div>
+                        ${content}
+                    </div>
                 <div>
-                    <a href="/">home</a>
-                </div>
-                <hr/>
-                <div>
-                    <h1>${heading}</h1>
-                </div>
-                <div>
-                    <h4>${date}</h4>
-                </div>
-                <div>
-                    ${content}
-                </div>
             </body>
         </html> `
     return htmltemplate;
