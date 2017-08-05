@@ -66,6 +66,7 @@ function createHtml (data){
                    ${title}
                 </title>
                 <meta name="viewport" width="with-device-width,inital-scale-one"/> 
+                <link href="/ui/style.css" rel="stylesheet" />
             </head>
             
             <body>
