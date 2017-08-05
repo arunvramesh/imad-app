@@ -70,7 +70,7 @@ function createHtml (data){
             </head>
             
             <body>
-                <div class="contaiiner">
+                <div class="container">
                     <div>
                         <a href="/">home</a>
                     </div>
