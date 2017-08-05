@@ -84,6 +84,7 @@ function createHtml (data){
                 </div>
             </body>
         </html> `
+    return htmltemplate;
 }
 app.use(morgan('combined'));
 
