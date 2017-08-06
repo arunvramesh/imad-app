@@ -84,7 +84,7 @@ function createHtml (data){
                     <div>
                         ${contant}
                     </div>
-                <div>
+                </div>
             </body>
         </html> `
     return htmltemplate;
