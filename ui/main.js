@@ -3,6 +3,6 @@ alert("Java script");
 
 //move left
 var img=document.getElementById("madi");
-img.onClick= function(){
+img.onclick= function(){
     img.style.marginLeft = "20px";
 };
