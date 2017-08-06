@@ -1,5 +1,5 @@
 console.log('Loaded!');
-alert("Java script");
+//alert("Java script");
 
 //move left
 var img=document.getElementById('madi');
