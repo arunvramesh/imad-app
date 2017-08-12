@@ -91,6 +91,14 @@ function createHtml (data){
 }
 app.use(morgan('combined'));
 
+namel=[];
+app.get('/name:names', function (req,res) {
+   var name=req.getparams.name;
+   
+   namel.push(name);
+   res.send(JSON.stringify(namel));
+});
+
 var counter=0;
 
 app.get('/counter', function (req, res) {
