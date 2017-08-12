@@ -16,3 +16,10 @@ button.onclick = function()
     request.open('GET',"http://arunvramesh96.imad.hasura-app.io/counter",true);
     request.send(null);
 }
+
+var submit=document.getElementById("button");
+var input=document.getElementById("name");
+var name=input.value;
+submit.onclick = function() {
+    
+}
