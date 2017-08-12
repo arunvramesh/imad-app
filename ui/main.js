@@ -21,8 +21,6 @@ var submit=document.getElementById("button");
 
 submit.onclick = function () {
     var request= new XMLHttpRequest();
-    var input=document.getElementById("name");
-    var name1=input.value;
     request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE){
             if(request.status === 200){
@@ -38,9 +36,8 @@ submit.onclick = function () {
             }
         }
     }
+    var input=document.getElementById("name");
+    var name1=input.value;
     request.open('GET',"http://arunvramesh96.imad.hasura-app.io/name?name="+name1,true);
     request.send(null);
-    
-    
-   
 };
