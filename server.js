@@ -93,7 +93,7 @@ app.use(morgan('combined'));
 
 namel=[];
 app.get('/name/', function (req,res) {
-   var name=req.name;
+   var name=req.query.name;
    
    namel.push(name);
    res.send(JSON.stringify(namel));
