@@ -21,12 +21,26 @@ var submit=document.getElementById("button");
 var input=document.getElementById("name");
 var name1=input.value;
 submit.onclick = function () {
-    var names = ["name1","name2","name3"];
-    var list='';
-    for(var i=0 ; i< names.length ; i++)
-    {
-        list= list + "<li>" + names[i] +"</li>"
+    var request= new XMLHttpRequest();
+    
+    request.onreadystatechange = function(){
+        if(request.readyState === XMLHttpRequest.DONE){
+            if(request.status === 200){
+                var names =request.responceText;
+                names=JSON.parse(names);
+                var list='';
+                for(var i=0 ; i< names.length ; i++)
+                {
+                    list= list + "<li>" + names[i] +"</li>"
+                }
+                var hlist=document.getElementById("list");
+                hlist.innerHTML=list;
+                        }
+                    }
     }
-    var hlist=document.getElementById("list");
-    hlist.innerHTML=list;
+    request.open('GET',"http://arunvramesh96.imad.hasura-app.io/name?="+name1,true);
+    request.send(null);
+    
+    
+   
 };
