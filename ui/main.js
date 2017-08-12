@@ -19,7 +19,7 @@ button.onclick = function()
 
 var submit=document.getElementById("button");
 var input=document.getElementById("name");
-var name=input.value;
+var name1=input.value;
 submit.onclick = function() {
     
 }
