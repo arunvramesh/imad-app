@@ -38,7 +38,7 @@ submit.onclick = function () {
                         }
                     }
     }
-    request.open('GET',"http://arunvramesh96.imad.hasura-app.io/name?="+name1,true);
+    request.open('GET',"http://arunvramesh96.imad.hasura-app.io/name?name="+name1,true);
     request.send(null);
     
     
