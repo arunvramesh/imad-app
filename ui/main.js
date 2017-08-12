@@ -28,5 +28,5 @@ submit.onclick = function () {
         list= list + "<li>" + names[i] +"</li>"
     }
     var hlist=document.getElementById("list");
-    hlist.innerHTML="list";
+    hlist.innerHTML=list;
 };
