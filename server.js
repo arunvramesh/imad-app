@@ -92,7 +92,7 @@ function createHtml (data){
 app.use(morgan('combined'));
 
 namel=[];
-app.get('/name:names', function (req,res) {
+app.get('/name/:names', function (req,res) {
    var name=req.getparams.name;
    
    namel.push(name);
