@@ -18,11 +18,11 @@ button.onclick = function()
 };
 
 var submit=document.getElementById("button");
-var input=document.getElementById("name");
-var name1=input.value;
+
 submit.onclick = function () {
     var request= new XMLHttpRequest();
-    
+    var input=document.getElementById("name");
+    var name1=input.value;
     request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE){
             if(request.status === 200){
