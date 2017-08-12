@@ -35,8 +35,8 @@ submit.onclick = function () {
                 }
                 var hlist=document.getElementById("list");
                 hlist.innerHTML=list;
-                        }
-                    }
+            }
+        }
     }
     request.open('GET',"http://arunvramesh96.imad.hasura-app.io/name?name="+name1,true);
     request.send(null);
