@@ -15,11 +15,18 @@ button.onclick = function()
     }
     request.open('GET',"http://arunvramesh96.imad.hasura-app.io/counter",true);
     request.send(null);
-}
+};
 
 var submit=document.getElementById("button");
 var input=document.getElementById("name");
 var name1=input.value;
-submit.onclick = function() {
-    
-}
+submit.onclick = function () {
+    var names = ["name1","name2","name3"];
+    var list='';
+    for(var i=0 ; i<list.length() ; i++)
+    {
+        list= list + "<li>" + names[i] +"</li>"
+    }
+    var hlist=document.getElementById("list");
+    hlist.innerHTML="list";
+};
