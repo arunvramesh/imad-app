@@ -91,6 +91,13 @@ function createHtml (data){
 }
 app.use(morgan('combined'));
 
+var counter=0;
+
+app.get('/counter2', function (req, res) {
+    counter=counter+1;
+    res.send("helo");
+});
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
@@ -112,12 +119,7 @@ app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
 
-//var counter=0;
 
-app.get('/counter2', function (req, res) {
-   // counter=counter+1;
-    //res.send("helo");
-});
 
 
 // Do not change port, otherwise your app won't run on IMAD servers
