@@ -107,7 +107,7 @@ app.get('/name/', function (req,res) {
    res.send(JSON.stringify(namel));
 });
 
-var pool=new Poo(config);
+var pool=new Pool(config);
 
 
 var counter=0;
