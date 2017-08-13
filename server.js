@@ -1,6 +1,14 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var Pool = require('pg').Pool;
+var config = {
+  user: 'arunvramesh96',
+  host: 'db.imad.hasura-app.io',
+  database: 'arunvramesh96',
+  password: process.env.DB_PASSWORD,
+  port: 5432,
+};
 var app = express();
 var articles =
 {
@@ -99,6 +107,11 @@ app.get('/name/', function (req,res) {
    res.send(JSON.stringify(namel));
 });
 
+var pool=new Poo(config);
+app.get('/test-db',function(req,res){
+    
+});
+
 var counter=0;
 
 app.get('/counter', function (req, res) {
@@ -110,9 +123,20 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/:articlename', function(req,res){
+app.get('/article/:articlename', function(req,res){
     var articlename= req.params.articlename;
-  res.send(createHtml(articles[articlename]));
+    pool.query("SELECT * from article where title='"+req.params.articlename, function(err,result){
+       if(err){
+           res.status(500).send(err.toString());
+       } else {
+           if(result.rows.length===0)
+           {
+               res.status(404).send('article not found');
+               var articledata=result.rows[0];
+               res.send(createHtml(articles[articlename]));
+           }
+       }
+    });
 });
 
 app.get('/ui/style.css', function (req, res) {
