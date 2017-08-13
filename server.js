@@ -108,9 +108,7 @@ app.get('/name/', function (req,res) {
 });
 
 var pool=new Poo(config);
-app.get('/test-db',function(req,res){
-    
-});
+
 
 var counter=0;
 
