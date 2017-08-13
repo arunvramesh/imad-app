@@ -131,7 +131,8 @@ app.get('/article/:articlename', function(req,res){
            {
                res.status(404).send('article not found');
                var articledata=result.rows[0];
-               res.send(createHtml(articledata));
+               res.send(JSON.stringify(result));
+              // res.send(createHtml(articledata));
            }
        }
     });
