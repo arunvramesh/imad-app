@@ -87,7 +87,7 @@ function createHtml (data){
                         <h1>${heading}</h1>
                     </div>
                     <div>
-                        <h4>${date.toDateString}</h4>
+                        <h4>${date.toDateString()}</h4>
                     </div>
                     <div>
                         ${content}
