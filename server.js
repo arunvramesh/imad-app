@@ -10,58 +10,6 @@ var config = {
   port: 5432,
 };
 var app = express();
-var articles =
-{
-    'article-one' : {
-        title: 'Article one | Arun',
-        heading: 'Article one',
-        date: 'Sep 5 2017',
-        contant: `<p>
-                This the the content This the the content This the the content This the the content This the the content This the the content 
-            </p>
-            <p>
-                This the the content This the the content This the the content This the the content This the the content This the the content 
-            </p>
-            <p>
-                This the the content This the the content This the the content This the the content This the the content This the the content 
-            </p>
-            <p>
-                This the the content This the the content This the the content This the the content This the the content This the the content 
-            </p>
-            <p>
-                This the the content This the the content This the the content This the the content This the the content This the the content 
-            </p>
-            <p>
-                This the the content This the the content This the the content This the the content This the the content This the the content 
-            </p>`
-    },
-    'article-two': {
-        title: 'Article Two | Arun',
-        heading: 'Article two',
-        date: 'Sep 23 2017',
-        contant: `<p>
-                This the the content This the the content This the the content This the the content This the the content This the the content 
-            </p>
-            
-                This the the content This the the content This the the content This the the content This the the content This the the content 
-            </p>
-            <p>
-                This the the content This the the content This the the content This the the content This the the content This the the content 
-            </p>`
-    },
-    'article-three': { 
-        title: 'Article Tree | Arun',
-        heading: 'Article three',
-        date: 'Sep 23 2017',
-        contant: `<p>
-                This the the content This the the content This the the content This the the content This the the content This the the content 
-            </p>
-            
-                This the the content This the the content This the the content This the the content This the the content This the the content 
-            </p>`
-    }
-    
-};
 function createHtml (data){
     var title=data.title;
     var heading=data.heading;
