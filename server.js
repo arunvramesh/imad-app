@@ -107,9 +107,6 @@ app.get('/name/', function (req,res) {
    res.send(JSON.stringify(namel));
 });
 
-var pool=new Pool(config);
-
-
 var counter=0;
 
 app.get('/counter', function (req, res) {
@@ -121,6 +118,8 @@ app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
+
+var pool=new Pool(config);
 app.get('/article/:articlename', function(req,res){
     var articlename= req.params.articlename;
     pool.query("SELECT * from article where title= $1",[req.params.articlename], function(err,result){
@@ -130,9 +129,10 @@ app.get('/article/:articlename', function(req,res){
            if(result.rows.length===0)
            {
                res.status(404).send('article not found');
-               var articledata=result.rows[0];
-               res.send(JSON.stringify(result));
-              // res.send(createHtml(articledata));
+           } else {
+                var articledata=result.rows[0];
+              // res.send(JSON.stringify(result));
+               res.send(createHtml(articledata));
            }
        }
     });
