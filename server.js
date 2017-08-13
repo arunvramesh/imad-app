@@ -125,7 +125,7 @@ app.get('/', function (req, res) {
 
 app.get('/article/:articlename', function(req,res){
     var articlename= req.params.articlename;
-    pool.query("SELECT * from article where title='"+req.params.articlename, function(err,result){
+    pool.query("SELECT * from article where title='"+req.params.articlename+"'", function(err,result){
        if(err){
            res.status(500).send(err.toString());
        } else {
@@ -133,7 +133,7 @@ app.get('/article/:articlename', function(req,res){
            {
                res.status(404).send('article not found');
                var articledata=result.rows[0];
-               res.send(createHtml(articles[articlename]));
+               res.send(createHtml(articles[articledata]));
            }
        }
     });
