@@ -2,6 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
+var crypto = require('crypto');
 var config = {
   user: 'arunvramesh96',
   host: 'db.imad.hasura-app.io',
@@ -50,7 +51,6 @@ app.use(morgan('combined'));
 namel=[];
 app.get('/name/', function (req,res) {
    var name=req.query.name;
-   
    namel.push(name);
    res.send(JSON.stringify(namel));
 });
@@ -60,6 +60,17 @@ var counter=0;
 app.get('/counter', function (req, res) {
     counter=counter+1;
     res.send(counter.toString());
+});
+
+function hash(input,salt){
+    var byte=crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512');
+    return byte.toString('hex');
+}
+
+app.get('/hash/:string', function (req, res) {
+    var hashedString=hash(req.params.string,'some-randon-string');
+    return hashedString;
+    
 });
 
 app.get('/', function (req, res) {
@@ -79,7 +90,6 @@ app.get('/article/:articlename', function(req,res){
                res.status(404).send('article not found');
            } else {
                 var articledata=result.rows[0];
-              // res.send(JSON.stringify(result));
                res.send(createHtml(articledata));
            }
        }
