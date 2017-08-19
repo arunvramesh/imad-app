@@ -64,7 +64,7 @@ app.get('/counter', function (req, res) {
 
 function hash(input,salt){
     var byte=crypto.pbkdf2Sync(input, salt, 100000, 512, 'sha512');
-    return byte.toString('hex');
+    return ["pbkdf2Sync",10000,salt,byte.toString('hex')].join('$');
 }
 
 app.get('/hash/:string', function (req, res) {
