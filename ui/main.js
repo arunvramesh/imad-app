@@ -17,6 +17,33 @@ button.onclick = function()
     request.send(null);
 };
 
+
+
+
+//login
+var lsubmit=document.getElementById("lbutton");
+
+submit.onclick = function () {
+    var request= new XMLHttpRequest();
+    request.onreadystatechange = function(){
+        if(request.readyState === XMLHttpRequest.DONE){
+            if(request.status === 200){
+                consol.log('Succesfully loged in');
+                alert("User succesfully loged in");
+            }else if(request.status === 403){
+                alert("Username or papssword incorrect");
+            }
+        }
+    }
+    var username=document.getElementById("username").value;
+    var password=document.getElementById("password").value;
+    request.open('POST',"http://arunvramesh96.imad.hasura-app.io/logn",true);
+    request.send(JSON.stringify({username: username, password: password}));
+};
+
+
+
+//name
 var submit=document.getElementById("button");
 
 submit.onclick = function () {
