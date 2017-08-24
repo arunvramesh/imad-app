@@ -36,6 +36,8 @@ lsubmit.onclick = function () {
                 alert("Somthing went wrong");
             }else if(request.status === 404){
                 alert("404");
+            }else if(request.status === 502){
+                alert("404");
             }
         }
     }
