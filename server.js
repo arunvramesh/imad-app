@@ -103,7 +103,7 @@ app.post('/log',function(req,res){
                     res.send("User sucesfully loggeed in");
                 }
                 else{
-                    res.send("incorrect username or password");
+                    res.status(404).send('user not found');
                 }
            }
        }
