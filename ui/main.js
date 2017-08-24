@@ -32,11 +32,14 @@ submit.onclick = function () {
                 alert("User succesfully loged in");
             }else if(request.status === 403){
                 alert("Username or papssword incorrect");
+            }else if(request.status === 500){
+                alert("Somthing went wrong");
             }
         }
     }
     var username=document.getElementById("username").value;
     var password=document.getElementById("password").value;
+    request.setRequestHeader('Content-Type','application/json');
     request.open('POST',"http://arunvramesh96.imad.hasura-app.io/logn",true);
     request.send(JSON.stringify({username: username, password: password}));
 };
