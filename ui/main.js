@@ -42,7 +42,7 @@ lsubmit.onclick = function () {
         }
     }
     //var username=document.getElementById("username").value;
-    var usrname="arun1";
+    var username="arun1";
     var password="007topnews";
     //var password=document.getElementById("password").value;
     console.log(username);
