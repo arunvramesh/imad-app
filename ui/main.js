@@ -23,7 +23,7 @@ button.onclick = function()
 //login
 var lsubmit=document.getElementById("lbutton");
 
-submit.onclick = function () {
+lsubmit.onclick = function () {
     var request= new XMLHttpRequest();
     request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE){
