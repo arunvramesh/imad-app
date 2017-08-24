@@ -34,6 +34,8 @@ lsubmit.onclick = function () {
                 alert("Username or papssword incorrect");
             }else if(request.status === 500){
                 alert("Somthing went wrong");
+            }else if(request.status === 404){
+                alert("404");
             }
         }
     }
