@@ -35,7 +35,7 @@ lsubmit.onclick = function () {
             }else if(request.status === 500){
                 alert("Somthing went wrong");
             }else if(request.status === 404){
-                alert("404");
+                alert("Invalid user or password");
             }else if(request.status === 502){
                 alert("502");
             }
