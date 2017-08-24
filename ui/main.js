@@ -28,7 +28,7 @@ lsubmit.onclick = function () {
     request.onreadystatechange = function(){
         if(request.readyState === XMLHttpRequest.DONE){
             if(request.status === 200){
-                consol.log('Succesfully loged in');
+                console.log('Succesfully loged in');
                 alert("User succesfully loged in");
             }else if(request.status === 403){
                 alert("Username or papssword incorrect");
@@ -41,7 +41,7 @@ lsubmit.onclick = function () {
             }
         }
     }
-    //var username=document.getElementById("username").value;
+    //var username=document.getElementById("username").value.toString();
     var username="arun1";
     var password="007topnews";
     //var password=document.getElementById("password").value;
