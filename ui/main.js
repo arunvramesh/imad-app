@@ -41,10 +41,10 @@ lsubmit.onclick = function () {
             }
         }
     }
-    var username=document.getElementById("username").value.toString();
+    var username=document.getElementById("username").value;
     //var username="arun1";
     //var password="007topnews";
-    var password=document.getElementById("password").value.toString();
+    var password=document.getElementById("password").value;
     console.log(username);
     console.log(password);
     request.open('POST',"http://arunvramesh96.imad.hasura-app.io/log",true);
